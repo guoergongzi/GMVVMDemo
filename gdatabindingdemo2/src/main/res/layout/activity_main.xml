@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="TestBinding">
+
+        <import
+            alias="Utils"
+            type="com.gegz.gdatabindingdemo2.utils.Utils" />
+
+        <import
+            alias="Utils2"
+            type="com.gegz.gdatabindingdemo2.utils2.Utils" />
+
+        <variable
+            name="textString"
+            type="String" />
+
+        <variable
+            name="userInfo"
+            type="com.gegz.gdatabindingdemo2.model.UserInfo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tv_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{textString,default = 测试1}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_main_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Utils.processString(userInfo.userName)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_main" />
+
+        <TextView
+            android:id="@+id/tv_main_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Utils.isMainActivity(context)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_main" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

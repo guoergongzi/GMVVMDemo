@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "GMVVMDemo"
+include ':app'
+include ':lifecycledemo'
+include ':glifecycledemo'
+include ':gviewmodeldemo'
+include ':glivedatademo'
+include ':gdatabindingdemo'
+include ':gdatabindingdemo2'

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GViewModelDemo</string>
+    <string name="string_view_model_demo_jump">点击跳转</string>
+    <string name="string_view_model_demo_show">点击显示计时</string>
+</resources>
