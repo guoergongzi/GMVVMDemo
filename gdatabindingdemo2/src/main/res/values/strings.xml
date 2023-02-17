@@ -4,4 +4,6 @@
     <string name="string_main_auto_id">改变Id和Price</string>
     <string name="string_main_map_update">改变Map内容</string>
     <string name="string_main_click">测试绑定点击监听</string>
+    <string name="string_main_user_live_data_update">改变用户名</string>
+    <string name="string_main_default_tip">测试默认值</string>
 </resources>
