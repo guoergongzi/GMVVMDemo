@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GDataBindingDemo2</string>
+    <string name="string_main_auto_name">改变Name和Price</string>
+    <string name="string_main_auto_id">改变Id和Price</string>
+    <string name="string_main_map_update">改变Map内容</string>
+    <string name="string_main_click">测试绑定点击监听</string>
 </resources>
