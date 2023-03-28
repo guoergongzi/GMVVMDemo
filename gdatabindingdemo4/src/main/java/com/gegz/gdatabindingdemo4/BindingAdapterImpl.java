@@ -1,12 +1,17 @@
 package com.gegz.gdatabindingdemo4;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.databinding.BindingAdapter;
+import androidx.databinding.BindingConversion;
 
 import com.bumptech.glide.Glide;
 
@@ -43,5 +48,16 @@ public class BindingAdapterImpl {
     public static void updateText(TextView textView, String content) {
         textView.setText(content);
         textView.postDelayed(() -> textView.setText(content + "-ABC"), 2000);
+    }
+
+    /**
+     * 数据转换
+     */
+    @BindingConversion
+    public static Drawable conversionStringToColor(String str) {
+        if ("蓝色".equals(str)) {
+            return new ColorDrawable(ContextCompat.getColor(MyApplication.getInstance(), R.color.purple_700));
+        }
+        return new ColorDrawable(ContextCompat.getColor(MyApplication.getInstance(), R.color.white));
     }
 }

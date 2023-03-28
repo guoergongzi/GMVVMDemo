@@ -3,6 +3,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="imageUrl"
             type="String" />
@@ -22,6 +24,10 @@
         <variable
             name="clickProcessor"
             type="com.gegz.gdatabindingdemo4.ClickProcessor" />
+
+        <variable
+            name="viewVisibility"
+            type="boolean" />
     </data>
 
     <LinearLayout
@@ -59,5 +65,13 @@
             android:layout_marginTop="16dp"
             android:onClick="@{() -> clickProcessor.showToast(context)}"
             android:text="点击测试" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background='@{"蓝色"}'
+            android:text="测试数据类型转换"
+            android:textColor="@color/white" />
     </LinearLayout>
 </layout>
