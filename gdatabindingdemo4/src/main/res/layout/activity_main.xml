@@ -6,6 +6,14 @@
         <variable
             name="imageUrl"
             type="String" />
+
+        <variable
+            name="viewHeight"
+            type="int" />
+
+        <variable
+            name="viewWidth"
+            type="int" />
     </data>
 
     <LinearLayout
@@ -25,7 +33,15 @@
             bind_imageUrl="@{imageUrl}"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginTop="16dp"
             android:contentDescription="@string/string_empty" />
 
+        <View
+            bind_height="@{viewHeight}"
+            bind_width="@{viewWidth}"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/black" />
     </LinearLayout>
 </layout>

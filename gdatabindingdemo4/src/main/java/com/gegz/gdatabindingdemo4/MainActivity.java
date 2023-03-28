@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityMainBinding mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
         mainBinding.setImageUrl("https://profile.csdnimg.cn/C/B/6/1_wccadab");
+
+        mainBinding.setViewHeight(200);
+        mainBinding.setViewWidth(300);
     }
 }
