@@ -4,6 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
 
@@ -34,5 +35,14 @@ public class BindingAdapterImpl {
             layoutParams.height = height;
             view.setLayoutParams(layoutParams);
         }, 2000);
+    }
+
+    /**
+     * 覆盖系统属性
+     */
+    @BindingAdapter("android:text")
+    public static void updateText(TextView textView, String content) {
+        textView.setText(content);
+        textView.postDelayed(() -> textView.setText(content + "-ABC"), 2000);
     }
 }

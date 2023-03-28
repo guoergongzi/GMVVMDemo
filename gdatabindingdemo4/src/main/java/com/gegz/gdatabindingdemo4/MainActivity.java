@@ -22,5 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         mainBinding.setViewHeight(200);
         mainBinding.setViewWidth(300);
+
+        mainBinding.setTextContent("测试");
     }
 }
