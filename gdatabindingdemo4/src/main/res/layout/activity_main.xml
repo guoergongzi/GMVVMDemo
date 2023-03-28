@@ -18,6 +18,10 @@
         <variable
             name="textContent"
             type="String" />
+
+        <variable
+            name="clickProcessor"
+            type="com.gegz.gdatabindingdemo4.ClickProcessor" />
     </data>
 
     <LinearLayout
@@ -48,5 +52,12 @@
             android:text="@{textContent}"
             android:textColor="@color/black"
             android:textSize="33sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> clickProcessor.showToast(context)}"
+            android:text="点击测试" />
     </LinearLayout>
 </layout>

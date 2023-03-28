@@ -23,7 +23,6 @@ public class BindingAdapterImpl {
         Glide.with(imageView.getContext()).load(imageUrl).into(imageView);
     }
 
-
     /**
      * 调整控件宽高
      */

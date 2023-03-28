@@ -27,5 +27,7 @@ public class MainActivity extends AppCompatActivity {
         mainBinding.setViewWidth(300);
         // 测试自定义属性覆盖系统属性
         mainBinding.setTextContent("测试");
+        // 测试lambda表达式
+        mainBinding.setClickProcessor(new ClickProcessor());
     }
 }
