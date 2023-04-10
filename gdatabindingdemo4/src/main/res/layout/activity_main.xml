@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -28,50 +29,97 @@
         <variable
             name="viewVisibility"
             type="boolean" />
+
+        <variable
+            name="includeString"
+            type="String" />
+
+        <variable
+            name="viewStubString"
+            type="String" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <ImageView
-            bind_imageUrl="@{imageUrl}"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="16dp"
-            android:contentDescription="@string/string_empty" />
-
-        <View
-            bind_height="@{viewHeight}"
-            bind_width="@{viewWidth}"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/black" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@{textContent}"
-            android:textColor="@color/black"
-            android:textSize="33sp" />
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:onClick="@{() -> clickProcessor.showToast(context)}"
-            android:text="点击测试" />
+            <!--测试自定义属性-->
+            <ImageView
+                bind_imageUrl="@{imageUrl}"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/string_empty" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background='@{"蓝色"}'
-            android:text="测试数据类型转换"
-            android:textColor="@color/white" />
-    </LinearLayout>
+            <!--测试多个自定义属性组合-->
+            <!--suppress AndroidUnknownAttribute -->
+            <View
+                bind_height="@{viewHeight}"
+                bind_width="@{viewWidth}"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/black" />
+
+            <!--测试覆盖系统属性-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{textContent}"
+                android:textColor="@color/black"
+                android:textSize="33sp" />
+
+            <!--测试lambda表达式-->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="@{() -> clickProcessor.showToast(context)}"
+                android:text="@string/string_click_test" />
+
+            <!--测试数据转换-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background='@{"蓝色"}'
+                android:text="@string/string_conversion_test"
+                android:textColor="@color/white" />
+
+            <!--测试include布局-->
+            <include
+                layout="@layout/layout_include_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="16dp"
+                bind:includeString="@{includeString}" />
+
+            <!--测试viewStub布局-->
+            <ViewStub
+                android:id="@+id/layout_stub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="16dp"
+                android:layout="@layout/layout_include_test"
+                android:padding="12dp"
+                bind:includeString="@{viewStubString}" />
+
+            <!--测试资源引用-->
+            <TextView
+                android:id="@+id/layout_resources"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text='@{@string/string_resources_test("测试"),default = "测试资源文件"}' />
+        </LinearLayout>
+    </ScrollView>
 </layout>

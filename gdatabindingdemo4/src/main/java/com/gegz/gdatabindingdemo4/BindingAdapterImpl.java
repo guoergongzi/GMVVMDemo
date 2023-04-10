@@ -1,12 +1,10 @@
 package com.gegz.gdatabindingdemo4;
 
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
@@ -47,7 +45,11 @@ public class BindingAdapterImpl {
     @BindingAdapter("android:text")
     public static void updateText(TextView textView, String content) {
         textView.setText(content);
-        textView.postDelayed(() -> textView.setText(content + "-ABC"), 2000);
+
+        textView.postDelayed(() -> {
+            String delayStr = content + "-ABC";
+            textView.setText(delayStr);
+        }, 2000);
     }
 
     /**

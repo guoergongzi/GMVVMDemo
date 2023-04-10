@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">gdatabindingdemo4</string>
     <string name="string_empty" />
+    <string name="string_click_test">点击测试</string>
+    <string name="string_conversion_test">测试数据类型转换</string>
+    <string name="string_resources_test">资源文件：%s</string>
 </resources>

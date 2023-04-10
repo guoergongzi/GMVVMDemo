@@ -1,15 +1,12 @@
 package com.gegz.gdatabindingdemo4;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import android.app.Application;
-import android.os.Bundle;
-
-import com.bumptech.glide.Glide;
 import com.gegz.gdatabindingdemo4.databinding.ActivityMainBinding;
-
-import javax.net.ssl.HttpsURLConnection;
+import com.gegz.gdatabindingdemo4.databinding.LayoutIncludeTestBinding;
 
 /**
  * Demo主界面
@@ -29,5 +26,12 @@ public class MainActivity extends AppCompatActivity {
         mainBinding.setTextContent("测试");
         // 测试lambda表达式
         mainBinding.setClickProcessor(new ClickProcessor());
+        // 测试include布局
+        mainBinding.setIncludeString("测试include布局");
+        // 测试viewStub布局
+        if (mainBinding.layoutStub.getViewStub() != null) {
+            mainBinding.layoutStub.getViewStub().inflate();
+            mainBinding.setViewStubString("测试viewStub布局");
+        }
     }
 }
