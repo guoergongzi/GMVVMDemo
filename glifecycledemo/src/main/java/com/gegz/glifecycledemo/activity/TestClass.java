@@ -1,10 +1,12 @@
-package com.gegz.glifecycledemo;
+package com.gegz.glifecycledemo.activity;
 
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
+
+import com.gegz.glifecycledemo.app.MyApplication;
 
 /**
  * 测试Activity使用LifeCycle

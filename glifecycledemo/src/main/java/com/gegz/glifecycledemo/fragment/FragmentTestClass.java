@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 
-import com.gegz.glifecycledemo.MyApplication;
+import com.gegz.glifecycledemo.app.MyApplication;
 
 /**
  * 测试fragment使用lifeCycle

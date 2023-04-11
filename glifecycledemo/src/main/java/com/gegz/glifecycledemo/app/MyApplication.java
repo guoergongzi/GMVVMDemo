@@ -1,6 +1,8 @@
-package com.gegz.glifecycledemo;
+package com.gegz.glifecycledemo.app;
 
 import android.app.Application;
+
+import androidx.lifecycle.ProcessLifecycleOwner;
 
 public class MyApplication extends Application {
 
@@ -14,5 +16,6 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         MyApplication.instance = this;
+        ProcessLifecycleOwner.get().getLifecycle().addObserver(new ApplicationTestClass());
     }
 }
